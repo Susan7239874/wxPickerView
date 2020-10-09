@@ -1,0 +1,200 @@
+.flex {        
+  display: box;              /* OLD - Android 4.4- */
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+/* 父元素-水平居中（主轴是横向才生效） */
+.flex-hc {
+  /* 09版 */
+  -webkit-box-pack: center;
+  /* 12版 */
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  /* 其它取值如下：
+     flex-start     主轴原点方向对齐
+    flex-end        主轴延伸方向对齐
+    space-between   等间距排列，首尾不留白
+    space-around    等间距排列，首尾留白
+   */
+}
+.flex-hend {
+  /* 09版 */
+  -webkit-box-pack: flex-end;
+  /* 12版 */
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+  /* 其它取值如下：
+     flex-start     主轴原点方向对齐
+    flex-end        主轴延伸方向对齐
+    space-between   等间距排列，首尾不留白
+    space-around    等间距排列，首尾留白
+   */
+}
+/* 父元素-竖直居中（主轴是横向才生效） */
+.flex-vc {
+  /* 09版 */
+  -webkit-box-align: center;
+  /* 12版 */
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+.flex-vend {
+  /* 09版 */
+  -webkit-box-align: flex-end;
+  /* 12版 */
+  -webkit-align-items:  flex-end;
+  -moz-align-items:  flex-end;
+  -ms-align-items:  flex-end;
+  -o-align-items:  flex-end;
+  align-items:  flex-end;
+}
+/* 父元素-横向排列（主轴） */
+.flex-h {
+/* 09版 */
+-webkit-box-orient: horizontal;
+/* 12版 */
+-webkit-flex-direction: row;
+-moz-flex-direction: row;
+-ms-flex-direction: row;
+-o-flex-direction: row;
+flex-direction: row;
+}
+/* 父元素-纵向排列（主轴） */
+.flex-v {
+/* 09版 */
+-webkit-box-orient: vertical;
+/* 12版 */
+-webkit-flex-direction: column;
+-moz-flex-direction: column;
+-ms-flex-direction: column;
+-o-flex-direction: column;
+flex-direction: column;
+}
+/* 父元素-横向换行 */
+.flex-hwrap {
+/* 09版 */
+/*-webkit-box-lines: multiple;*/
+/* 12版 */
+-webkit-flex-wrap: wrap;
+-moz-flex-wrap: wrap;
+-ms-flex-wrap: wrap;
+-o-flex-wrap: wrap;
+flex-wrap: wrap;
+}
+.flex-he{
+/* 09版 */
+-webkit-box-pack:flex-end;
+/* 12版 */
+-webkit-justify-content:flex-end;
+-moz-justify-content:flex-end;
+-ms-justify-content:flex-end;
+-o-justify-content:flex-end;
+justify-content:flex-end;
+}
+.flex-hspar {
+-webkit-box-pack: space-around;
+/* 12版 */
+-webkit-justify-content:space-around;
+-moz-justify-content:space-around;
+-ms-justify-content: space-around;
+-o-justify-content: space-around;
+justify-content: space-around;
+}
+.flex-hbet{
+-webkit-box-pack: space-between;
+/* 12版 */
+-webkit-justify-content: space-between;
+-moz-justify-content: space-between;
+-ms-justify-content: space-between;
+-o-justify-content: space-between;
+justify-content: space-between;
+}
+/* 遮罩 -s*/
+.fixblackbox{
+  width:100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.31);
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 2;
+  }
+  /* 遮罩 -e*/
+.pickerwrap{
+  width: 700rpx;
+  margin:auto;
+  height: calc(100vh - 150rpx);
+  background: #FFFFFF;
+  opacity: 1;
+  border-radius: 20rpx;
+  margin-top:100rpx;
+}
+.pickerwrap .header{
+  height:100rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  line-height: 80rpx;
+  padding-left:40rpx;
+  padding-right:40rpx;
+  /* padding:30rpx 40rpx; */
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom:15rpx;
+}
+.pickerwrap .header view:first-child{
+  color: rgba(179, 179, 179, 1);
+}
+.pickerwrap .header view:last-child{
+  color: #000000;
+}
+.picker1wrap{
+  width: 100%;
+  flex:1;
+}
+.picker2wrap{
+  width: 100%;
+   height:300rpx;
+}
+.piack2indicator{
+  /* color:red!important; */
+}
+.pickermore{
+  background:rgba(236, 241, 255, 1);
+  border-radius: 0px 0px 20rpx 20rpx;
+  overflow: hidden;
+}
+.pickermore .dec{
+  padding: 0 27rpx;
+  text-align: right;
+  height:90rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  line-height:90rpx;
+  color: #A7AEFF;
+}
+.indicator{
+  position: relative;
+}
+.indicator::after{
+  content: '';
+  height: 1px ;
+  width: 100%;
+  position: absolute;
+  left:0;
+  top:-1000px;
+}
+.active{
+  font-weight: bold!important;
+}

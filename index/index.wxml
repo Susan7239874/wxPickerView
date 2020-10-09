@@ -1,0 +1,40 @@
+<view class="fixblackbox" catchtouchmove='true' wx:if="{{dialogyn}}">
+  <view class="fixboinner">
+    <view class="pickerwrap flex flex-v">
+      <view class="header flex flex-hbet">
+        <view bindtap="closeDialog">取消</view>
+        <view bindtap="sureDialog">确定</view>
+      </view>
+    <picker-view indicator-style="height: 50px;" class="picker1wrap "  value="{{value}}" bindchange="bindChange1">
+      <picker-view-column>
+        <view wx:for="{{pickerlist1}}" wx:key="listkey" style="line-height: 50px; text-align: center;">
+          {{item}}
+        </view>
+      </picker-view-column>
+</picker-view>
+<view class="pickermore">
+  <view class="dec">上下滑动选择工时</view>
+<picker-view indicator-style="height: 50px;" indicator-class="piack2indicator" class="picker2wrap "  value="{{value2}}" bindchange="bindChange2" style="" 
+mask-style="background:rgba(236, 241, 255, 1);z-index:0;"
+>
+      <picker-view-column>
+        <view wx:for="{{hour}}" wx:for-index="hourindex" wx:key="hourkey"
+        class="{{value2[0]==hourindex?'active':''}}"
+          style="color:rgba(64, 78, 228, 1);line-height: 50px; text-align: center;">
+          {{item}}
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{minute}}"  wx:for-index="minuteindex" wx:key="minutekey" style="color:rgba(64, 78, 228, 1);line-height: 50px; text-align: center;"
+        class="{{value2[1]==minuteindex?'active':''}}"
+        >
+          {{item}}
+        </view>
+      </picker-view-column>
+</picker-view>
+</view>
+
+    </view>
+
+  </view>
+</view>
